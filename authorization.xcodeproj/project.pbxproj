@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		16A31BB329D6EA5B000647DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A31BB229D6EA5B000647DC /* AppDelegate.swift */; };
 		16A31BB529D6EA5B000647DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A31BB429D6EA5B000647DC /* SceneDelegate.swift */; };
-		16A31BB729D6EA5B000647DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A31BB629D6EA5B000647DC /* ViewController.swift */; };
+		16A31BB729D6EA5B000647DC /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A31BB629D6EA5B000647DC /* AuthorizationViewController.swift */; };
 		16A31BBA29D6EA5B000647DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A31BB829D6EA5B000647DC /* Main.storyboard */; };
 		16A31BBC29D6EA5F000647DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A31BBB29D6EA5F000647DC /* Assets.xcassets */; };
 		16A31BBF29D6EA5F000647DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A31BBD29D6EA5F000647DC /* LaunchScreen.storyboard */; };
+		16A31BC729D70695000647DC /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A31BC629D70695000647DC /* GreetingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16A31BAF29D6EA5B000647DC /* authorization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = authorization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A31BB229D6EA5B000647DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A31BB429D6EA5B000647DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16A31BB629D6EA5B000647DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16A31BB629D6EA5B000647DC /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		16A31BB929D6EA5B000647DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16A31BBB29D6EA5F000647DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16A31BBE29D6EA5F000647DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16A31BC029D6EA5F000647DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16A31BC629D70695000647DC /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				16A31BB229D6EA5B000647DC /* AppDelegate.swift */,
 				16A31BB429D6EA5B000647DC /* SceneDelegate.swift */,
-				16A31BB629D6EA5B000647DC /* ViewController.swift */,
+				16A31BB629D6EA5B000647DC /* AuthorizationViewController.swift */,
+				16A31BC629D70695000647DC /* GreetingViewController.swift */,
 				16A31BB829D6EA5B000647DC /* Main.storyboard */,
 				16A31BBB29D6EA5F000647DC /* Assets.xcassets */,
 				16A31BBD29D6EA5F000647DC /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A31BB729D6EA5B000647DC /* ViewController.swift in Sources */,
+				16A31BB729D6EA5B000647DC /* AuthorizationViewController.swift in Sources */,
 				16A31BB329D6EA5B000647DC /* AppDelegate.swift in Sources */,
 				16A31BB529D6EA5B000647DC /* SceneDelegate.swift in Sources */,
+				16A31BC729D70695000647DC /* GreetingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
