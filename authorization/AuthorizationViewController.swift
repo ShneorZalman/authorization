@@ -9,16 +9,21 @@ import UIKit
 
 class AuthorizationViewController: UIViewController {
 
-    @IBOutlet var passwordOutlet: UITextField!
-    @IBOutlet var loginOutlet: UITextField!
+    @IBOutlet var passwordTF: UITextField!
+    @IBOutlet var loginTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func logInTapped(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let greetingVC = segue.destination as? GreetingViewController else { return }
+        greetingVC.greeting = loginTF.text
     }
     
+    @IBAction func logInTapped(_ sender: Any) {
+    }
     @IBAction func remaindLoginTapped(_ sender: Any) {
     }
     @IBAction func remaindPasswordTapped(_ sender: Any) {

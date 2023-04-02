@@ -9,21 +9,21 @@ import UIKit
 
 class GreetingViewController: UIViewController {
 
+    @IBOutlet var greetingLabel: UILabel!
+    var greeting: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        greetingLabel.text = " Have a good day \(greeting!)!"
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
     }
-    */
+    
+    @IBAction func logOutButtonTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 
 }

@@ -58,7 +58,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                 <connections>
                                     <action selector="logInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFy-a6-Exa"/>
-                                    <segue destination="H4u-2c-3cF" kind="presentation" id="jP9-IJ-j2V"/>
+                                    <segue destination="H4u-2c-3cF" kind="presentation" id="vJQ-h1-6vt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,29 +77,33 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginOutlet" destination="nJm-BE-CkD" id="WOS-4p-f4A"/>
-                        <outlet property="passwordOutlet" destination="nJm-BE-CkD" id="y6T-gI-aGB"/>
+                        <outlet property="loginTF" destination="e7a-eO-GTt" id="Nvf-vM-clH"/>
+                        <outlet property="passwordTF" destination="nJm-BE-CkD" id="y6T-gI-aGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Greeting View Controller-->
         <scene sceneID="ieI-v2-cbw">
             <objects>
-                <viewController id="H4u-2c-3cF" sceneMemberID="viewController">
+                <viewController id="H4u-2c-3cF" customClass="GreetingViewController" customModule="authorization" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ec-hA-rvz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-zs-Tm4">
-                                <rect key="frame" x="120" y="313" width="80" height="34.5"/>
+                                <rect key="frame" x="120" y="312.5" width="80" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log out"/>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="H4u-2c-3cF" eventType="touchUpInside" id="yHH-ym-vJY"/>
+                                    <segue destination="JMw-OC-Dj2" kind="unwind" unwindAction="unwindFor:" id="Msn-QE-Pya"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a good day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-6G-52w">
-                                <rect key="frame" x="60" y="100" width="200" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a good day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-6G-52w">
+                                <rect key="frame" x="60" y="100" width="200" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,8 +120,12 @@
                             <constraint firstItem="W6e-zs-Tm4" firstAttribute="top" secondItem="7aF-6G-52w" secondAttribute="bottom" constant="180" id="toO-cW-yt7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="7aF-6G-52w" id="e7w-bC-oBv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNk-1i-oUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JMw-OC-Dj2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="756" y="4"/>
         </scene>
