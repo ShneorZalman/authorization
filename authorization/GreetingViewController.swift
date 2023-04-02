@@ -22,6 +22,7 @@ class GreetingViewController: UIViewController {
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
+
         dismiss(animated: true)
     }
     
