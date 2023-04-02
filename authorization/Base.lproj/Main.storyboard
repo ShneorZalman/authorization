@@ -22,18 +22,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7a-eO-GTt">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="loginCheckTF" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ONR-e1-Yfp"/>
-                                        </connections>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJm-BE-CkD">
                                         <rect key="frame" x="0.0" y="70" width="200" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                        <connections>
-                                            <action selector="logInTapped:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qj2-ah-1h9"/>
-                                        </connections>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -63,8 +57,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                 <connections>
-                                    <action selector="logInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFy-a6-Exa"/>
-                                    <segue destination="H4u-2c-3cF" kind="presentation" id="vJQ-h1-6vt"/>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ho8-Nd-BQV"/>
+                                    <segue destination="H4u-2c-3cF" kind="presentation" id="0yx-ek-v6G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,9 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="f31-p3-Jem" id="m6w-x6-yeh"/>
-                        <outlet property="loginTF" destination="e7a-eO-GTt" id="Nvf-vM-clH"/>
-                        <outlet property="passwordTF" destination="nJm-BE-CkD" id="7Zp-tV-X5C"/>
+                        <outlet property="loginTF" destination="e7a-eO-GTt" id="Ut9-WC-el0"/>
+                        <outlet property="passwordTF" destination="nJm-BE-CkD" id="Ukf-7t-oke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
