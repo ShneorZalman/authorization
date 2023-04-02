@@ -50,12 +50,24 @@ class AuthorizationViewController: UIViewController {
         else { showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Login")
             return
         }
+        guard let imputTextPassword = passwordTF.text, !imputTextPassword.isEmpty
+        else { showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Password")
+            return
+        }
+        
         let userName = "Login"
         let userPassword = "Password"
+        
         let isUserNameIsValid = NSPredicate(format: "SELF MATCHES %@", userName).evaluate(with: imputTextLogin)
+        let isUserPasswordIsValid = NSPredicate(format: "SELF MATCHES %@", userPassword).evaluate(with: imputTextPassword)
 
         if !isUserNameIsValid {
             showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Login")
+            return
+        }
+        if !isUserPasswordIsValid {
+            showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Password")
+            passwordTF.text = ""
             return
         }
     }
