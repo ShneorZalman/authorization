@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GreetingViewController: UIViewController {
+final class GreetingViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     var greeting: String!
@@ -22,8 +22,6 @@ class GreetingViewController: UIViewController {
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
-
-        dismiss(animated: true)
     }
     
 

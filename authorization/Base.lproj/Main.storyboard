@@ -11,7 +11,7 @@
         <!--Authorization View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthorizationViewController" customModule="authorization" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="AuthorizationViewController" customModule="authorization" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,54 +31,58 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aWa-aN-2tn">
-                                <rect key="frame" x="60" y="358.5" width="200" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f31-p3-Jem">
+                                <rect key="frame" x="60" y="244" width="200" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log in"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ho8-Nd-BQV"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="2Qa-ZD-rC4">
+                                <rect key="frame" x="60" y="308.5" width="200" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpW-nT-AWY">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="50"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Remind login?"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Remind login?">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="remaindLoginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="js8-Vq-lva"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDn-xO-C6B">
-                                        <rect key="frame" x="0.0" y="42.5" width="167.5" height="34.5"/>
+                                        <rect key="frame" x="101" y="0.0" width="99" height="50"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Remind password?"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Remind password?">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="remaindPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jsx-bp-Pue"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f31-p3-Jem">
-                                <rect key="frame" x="120" y="264" width="80" height="34.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log in"/>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ho8-Nd-BQV"/>
-                                    <segue destination="H4u-2c-3cF" kind="presentation" id="0yx-ek-v6G"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aWa-aN-2tn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="2Xy-SI-2Es"/>
-                            <constraint firstItem="aWa-aN-2tn" firstAttribute="top" secondItem="f31-p3-Jem" secondAttribute="bottom" constant="60" id="935-P6-DKd"/>
-                            <constraint firstItem="f31-p3-Jem" firstAttribute="top" secondItem="xfr-dh-kyW" secondAttribute="bottom" constant="60" id="LV2-Sb-paJ"/>
+                            <constraint firstItem="f31-p3-Jem" firstAttribute="top" secondItem="xfr-dh-kyW" secondAttribute="bottom" constant="40" id="IDO-RU-6nD"/>
+                            <constraint firstItem="2Qa-ZD-rC4" firstAttribute="top" secondItem="f31-p3-Jem" secondAttribute="bottom" constant="30" id="Ili-al-Vla"/>
+                            <constraint firstItem="f31-p3-Jem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="TgD-qH-Mg7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xfr-dh-kyW" secondAttribute="trailing" constant="60" id="VcU-ag-Uq5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aWa-aN-2tn" secondAttribute="trailing" constant="60" id="Y98-aV-FFG"/>
-                            <constraint firstItem="xfr-dh-kyW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gGW-I0-Kcz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f31-p3-Jem" secondAttribute="trailing" constant="120" id="kdd-K0-pj8"/>
-                            <constraint firstItem="f31-p3-Jem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="mBy-gE-3MU"/>
+                            <constraint firstItem="xfr-dh-kyW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="fmq-8s-gh5"/>
                             <constraint firstItem="xfr-dh-kyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="osa-9i-v1B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Qa-ZD-rC4" secondAttribute="trailing" constant="60" id="qbg-cs-k30"/>
+                            <constraint firstItem="2Qa-ZD-rC4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="tg7-wH-0DV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f31-p3-Jem" secondAttribute="trailing" constant="60" id="uZC-vM-VgO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginTF" destination="e7a-eO-GTt" id="Ut9-WC-el0"/>
                         <outlet property="passwordTF" destination="nJm-BE-CkD" id="Ukf-7t-oke"/>
+                        <segue destination="H4u-2c-3cF" kind="presentation" identifier="showGreetingVC" id="cpi-j9-w17"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-zs-Tm4">
-                                <rect key="frame" x="120" y="312.5" width="80" height="34.5"/>
+                                <rect key="frame" x="60" y="312.5" width="200" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log out"/>
                                 <connections>
@@ -102,7 +106,7 @@
                                     <segue destination="JMw-OC-Dj2" kind="unwind" unwindAction="unwindFor:" id="mmx-Ai-JfO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a good day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-6G-52w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aF-6G-52w">
                                 <rect key="frame" x="60" y="100" width="200" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -115,8 +119,8 @@
                             <constraint firstItem="7aF-6G-52w" firstAttribute="top" secondItem="ytE-jp-uKp" secondAttribute="top" constant="100" id="0W7-yE-Zag"/>
                             <constraint firstItem="7aF-6G-52w" firstAttribute="leading" secondItem="ytE-jp-uKp" secondAttribute="leading" constant="60" id="12f-Vi-akN"/>
                             <constraint firstItem="ytE-jp-uKp" firstAttribute="trailing" secondItem="7aF-6G-52w" secondAttribute="trailing" constant="60" id="1rp-31-j9o"/>
-                            <constraint firstItem="W6e-zs-Tm4" firstAttribute="leading" secondItem="ytE-jp-uKp" secondAttribute="leading" constant="120" id="ejF-N9-Sfp"/>
-                            <constraint firstItem="ytE-jp-uKp" firstAttribute="trailing" secondItem="W6e-zs-Tm4" secondAttribute="trailing" constant="120" id="fre-nB-whq"/>
+                            <constraint firstItem="W6e-zs-Tm4" firstAttribute="leading" secondItem="ytE-jp-uKp" secondAttribute="leading" constant="60" id="fa2-v7-ZRt"/>
+                            <constraint firstItem="ytE-jp-uKp" firstAttribute="trailing" secondItem="W6e-zs-Tm4" secondAttribute="trailing" constant="60" id="tl6-XI-a2F"/>
                             <constraint firstItem="W6e-zs-Tm4" firstAttribute="top" secondItem="7aF-6G-52w" secondAttribute="bottom" constant="180" id="toO-cW-yt7"/>
                         </constraints>
                     </view>

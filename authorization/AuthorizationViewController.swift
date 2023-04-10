@@ -7,26 +7,31 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
 
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var loginTF: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    
+    private let userName = "1"
+    private let userPassword = "2"
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController else { return }
-        greetingVC.greeting = loginTF.text
+        greetingVC.greeting = userName
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         loginTF.text = ""
         passwordTF.text = ""
     }
     
-    private func showAlertLogin(
+    private func showAlert(
         withTitle title: String,
         andMessage message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -35,47 +40,20 @@ class AuthorizationViewController: UIViewController {
             present(alert, animated: true)
     }
     
-    private func showAlertPassword(
-        withTitle title: String,
-        andMessage message: String) {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default)
-            alert.addAction(okAction)
-            present(alert, animated: true)
-    }
-    
-        
     @IBAction func loginButtonTapped(_ sender: Any) {
-        guard let imputTextLogin = loginTF.text, !imputTextLogin.isEmpty
-        else { showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Login")
-            return
+        guard loginTF.text == userName, passwordTF.text == userPassword
+            else { showAlert(withTitle: "Problems..", andMessage: "Uncorrect login or password")
+                return
         }
-        guard let imputTextPassword = passwordTF.text, !imputTextPassword.isEmpty
-        else { showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Password")
-            return
-        }
-        
-        let userName = "Login"
-        let userPassword = "Password"
-        
-        let isUserNameIsValid = NSPredicate(format: "SELF MATCHES %@", userName).evaluate(with: imputTextLogin)
-        let isUserPasswordIsValid = NSPredicate(format: "SELF MATCHES %@", userPassword).evaluate(with: imputTextPassword)
-
-        if !isUserNameIsValid {
-            showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Login")
-            return
-        }
-        if !isUserPasswordIsValid {
-            showAlertLogin(withTitle: "Problems..", andMessage: " Uncorrect Password")
-            passwordTF.text = ""
-            return
-        }
+        performSegue(withIdentifier: "showGreetingVC", sender: nil)
     }
+    
     @IBAction func remaindLoginTapped(_ sender: Any) {
-        showAlertLogin(withTitle: "You Login", andMessage: "Login")
+        showAlert(withTitle: "You Login", andMessage: "Login")
     }
+    
     @IBAction func remaindPasswordTapped(_ sender: Any) {
-        showAlertPassword(withTitle: "You Passord", andMessage: "Password")
+        showAlert(withTitle: "You Passord", andMessage: "Password")
     }
 }
 
